@@ -5,7 +5,7 @@
 const App = {
   data() {
     return {
-      activeIndex: 0, // то, что позволяет определить текущий активный шаг
+      activeIndex: 3, // то, что позволяет определить текущий активный шаг
       steps: [
         {
           title: 'Основы',
@@ -32,7 +32,7 @@ const App = {
   },
   methods: {
     prev() {
-      // когда нажимаем кнопку назад
+      if (this.activeIndex > 0) this.activeIndex--;
     },
     reset() {
       // начать заново

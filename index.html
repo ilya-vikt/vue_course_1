@@ -30,11 +30,14 @@
             <!-- <li class="steps-item"><span>4</span> Шаг 4</li> -->
           </ul>
           <div>
-            <button class="btn" :disabled="prevButtonDisable" @click="prev">
+            <button class="btn" :disabled="prevButtonDisable" v-if="!isFinished" @click="prev">
               Назад
             </button>
-            <button class="btn primary" @click="nextOrFinish">
+            <button class="btn primary" @click="nextOrFinish" v-if="!isFinished">
               {{ isLastStep ? 'Закончить' : 'Вперед' }}
+            </button>
+            <button class="btn" @click="reset" v-if="isFinished">
+              Начать заново
             </button>
           </div>
         </div>

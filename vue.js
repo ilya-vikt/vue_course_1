@@ -6,6 +6,7 @@ const App = {
   data() {
     return {
       activeIndex: 3, // то, что позволяет определить текущий активный шаг
+      isFinished: false,
       steps: [
         {
           title: 'Основы',
@@ -36,14 +37,14 @@ const App = {
     },
     reset() {
       this.activeIndex = 0;
+      this.isFinished = false;
     },
     nextOrFinish() {
       if (this.isLastStep) {
-        this.reset();
+        this.isFinished = true;
       } else {
         this.activeIndex++;
       }
-      // кнопка вперед или закончить
     },
     setActive(idx) {
       // когда нажимаем на определенный шаг

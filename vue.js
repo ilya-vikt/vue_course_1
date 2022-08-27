@@ -5,7 +5,7 @@
 const App = {
   data() {
     return {
-      activeIndex: 3, // то, что позволяет определить текущий активный шаг
+      activeIndex: 0, // то, что позволяет определить текущий активный шаг
       isFinished: false,
       steps: [
         {

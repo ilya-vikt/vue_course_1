@@ -20,6 +20,7 @@
               :key="idx"
               :class="{
                 done: idx <= currentStep,
+                active: idx === currentStep,
               }"
             >
               <span>{{ idx + 1 }}</span> {{ step.title }}

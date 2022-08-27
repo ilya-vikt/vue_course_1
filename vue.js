@@ -32,7 +32,7 @@ const App = {
   },
   methods: {
     prev() {
-      if (this.activeIndex > 0) this.activeIndex--;
+      this.activeIndex--;
     },
     reset() {
       // начать заново
@@ -47,6 +47,10 @@ const App = {
   computed: {
     currentStep() {
       return this.activeIndex;
+    },
+
+    prevButtonDisable() {
+      return this.activeIndex === 0;
     },
     // тут стоит определить несколько свойств:
     // 1. текущий выбранный шаг

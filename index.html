@@ -30,7 +30,9 @@
             <!-- <li class="steps-item"><span>4</span> Шаг 4</li> -->
           </ul>
           <div>
-            <button class="btn" @click="prev">Назад</button>
+            <button class="btn" :disabled="prevButtonDisable" @click="prev">
+              Назад
+            </button>
             <button class="btn primary">Вперед</button>
           </div>
         </div>

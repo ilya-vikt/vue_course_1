@@ -48,6 +48,7 @@ const App = {
     },
     setActive(idx) {
       this.activeIndex = idx;
+      this.isFinished = false;
     },
   },
   computed: {

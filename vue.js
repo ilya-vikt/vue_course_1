@@ -35,9 +35,14 @@ const App = {
       this.activeIndex--;
     },
     reset() {
-      // начать заново
+      this.activeIndex = 0;
     },
-    nextOfFinish() {
+    nextOrFinish() {
+      if (this.isLastStep) {
+        this.reset();
+      } else {
+        this.activeIndex++;
+      }
       // кнопка вперед или закончить
     },
     setActive(idx) {
@@ -51,6 +56,10 @@ const App = {
 
     prevButtonDisable() {
       return this.activeIndex === 0;
+    },
+
+    isLastStep() {
+      return this.activeIndex === this.steps.length - 1;
     },
     // тут стоит определить несколько свойств:
     // 1. текущий выбранный шаг

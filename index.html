@@ -33,7 +33,9 @@
             <button class="btn" :disabled="prevButtonDisable" @click="prev">
               Назад
             </button>
-            <button class="btn primary">Вперед</button>
+            <button class="btn primary" @click="nextOrFinish">
+              {{ isLastStep ? 'Закончить' : 'Вперед' }}
+            </button>
           </div>
         </div>
       </div>
